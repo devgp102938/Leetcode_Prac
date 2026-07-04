@@ -1,18 +1,21 @@
 
 class revarr{
-    public void RevArr(int[] arr){
 
-        int p1 = 0;
-        int p2 = arr.length - 1;
+public void RevArr(int[] arr){
+    reverse(arr, 0, arr.length - 1);
+}
 
-        while(p1 < p2){
+    private void reverse(int[] arr, int p1, int p2){
+
+        if(p1 >= p2){
+            return;
+        }
             int temp = arr[p1];
             arr[p1] = arr[p2];
             arr[p2] = temp;
         
-            p1++;
-            p2--;
-        }
+            reverse(arr, p1+1, p2-1);
+        
     }
 
     public static void main(String[] args) {
