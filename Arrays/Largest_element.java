@@ -3,9 +3,16 @@ import java.util.*;
 class Largest_element{
 
     public int Large_element(int[] arr){
-        Arrays.sort(arr);
+        int max = arr[0];
 
-        return arr[arr.length - 1];
+        for(int i = 0; i < arr.length - 1; i++){
+            for(int j = i + 1; j < arr.length; j++){
+                if(arr[j] > arr[i]){
+                    max = arr[j];
+                }
+            }
+        }
+        return max;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
