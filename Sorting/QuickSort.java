@@ -59,12 +59,11 @@
 import java.util.Scanner;
 
 class QuickSort{
-
     public int partition(int arr[], int low, int high){
         int pivot = arr[high];
 
         int i = low - 1;
-        
+
         for(int j = low; j < high; j++){
             if(arr[j] < pivot){
                 i++;
@@ -79,33 +78,32 @@ class QuickSort{
 
         return i + 1;
     }
-
     public void QS(int arr[], int low, int high){
+
         if( low < high){
             int pIndex = partition(arr, low, high);
 
             QS(arr, low, pIndex - 1);
             QS(arr, pIndex + 1, high);
         }
-    }
 
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         QuickSort qs = new QuickSort();
 
+        System.err.println("Enter number:");
         int n = sc.nextInt();
         int[] arr = new int[n];
-
         for(int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
         }
 
         qs.QS(arr, 0, arr.length - 1);
 
-        System.err.println("After Sorting");
+        System.err.println("After sorting");
         for(int i = 0; i < arr.length; i++){
-            System.err.print(arr[i] + " ");
+            System.out.print(arr[i] + " ");
         }
     }
 }
