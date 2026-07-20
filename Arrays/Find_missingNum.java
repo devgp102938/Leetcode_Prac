@@ -19,21 +19,32 @@ class Find_missingNum{
         // }
         // return -1;
 
+        // int n = arr.length + 1;
+
+        // int[] hash = new int[n + 1];
+
+        // for(int i = 0; i < n - 1; i++){
+        //     hash[arr[i]]++;
+        // }
+
+        // for(int i = 1; i <= n; i++){
+        //     if(hash[i] == 0){
+        //         return i;
+        //     }
+        // }
+
+        // return -1;
+
         int n = arr.length + 1;
 
-        int[] hash = new int[n + 1];
-
+        long sum = 0;
         for(int i = 0; i < n - 1; i++){
-            hash[arr[i]]++;
+            sum += arr[i];
         }
 
-        for(int i = 1; i <= n; i++){
-            if(hash[i] == 0){
-                return i;
-            }
-        }
+        long exp = n * (n + 1) / 2;
 
-        return -1;
+        return (int)(exp - sum);
     }
 
     public static void main(String[] args) {
