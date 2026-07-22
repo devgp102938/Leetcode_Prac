@@ -4,6 +4,11 @@ class getSingleElement{
     public int GetSingleElement(int[] arr){
         int n = arr.length;
 
+        int maxi = 0;
+        for(int i = 0; i < n; i++){
+            maxi = Math.max(maxi, arr[i]);
+        }
+
         int[] hash = new int[n];
 
         for(int i = 0; i < n; i++){
