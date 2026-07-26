@@ -3,23 +3,55 @@ import java.util.*;
 class longestSubarray {
 
     public int longestsubarray(int[] arr, int k) {
-        int len = arr.length;
 
-        int max = 0;
+        // *** BRUTE FORCE *** //
 
-        for(int i = 0; i < len; i++){
-            int currSum = 0;
-            for(int j = i; j < len; j++){
+        // int len = arr.length;
+
+        // int max = 0;
+
+        // for(int i = 0; i < len; i++){
+        //     int currSum = 0;
+        //     for(int j = i; j < len; j++){
                 
-                currSum += arr[j];
+        //         currSum += arr[j];
 
-                if(currSum == k){
-                    max = Math.max(max, j - i + 1);
-                }
+        //         if(currSum == k){
+        //             max = Math.max(max, j - i + 1);
+        //         }
+        //     }
+        // }
+
+        // return max;
+
+        int n = arr.length;
+
+        int maxlen = 0;
+
+        int left = 0, right = 0;
+
+        int sum = arr[0];
+
+        while(right < n){
+
+            // check if sum is greater than k
+            if(left <= right && sum > k){
+                sum -= arr[left];
+                left++;
+            }
+
+            // Update max length if sum equals k
+            if(sum == k){
+                maxlen = Math.max(maxlen, right - left + 1);
+            }
+
+            //add right in sum
+            right++;
+            if(right < n){
+                sum += arr[right];
             }
         }
-
-        return max;
+        return maxlen;
     }
 
     public static void main(String[] args) {
