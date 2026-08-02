@@ -18,8 +18,8 @@ class MaxSubarraySum{
 
         int n = arr.length;
         int maxi = Integer.MIN_VALUE;
+
         int sum = 0;
-        int start = 0;
 
         for(int i = 0; i < n; i++){
             sum += arr[i];
@@ -28,7 +28,7 @@ class MaxSubarraySum{
                 maxi = sum;
             }
 
-            if(sum == 0){
+            if(sum <= 0){
                 sum = 0;
             }
         }
