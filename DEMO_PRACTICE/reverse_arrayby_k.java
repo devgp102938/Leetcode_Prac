@@ -23,22 +23,21 @@ class reverse_arrayby_k{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        reverse_arrayby_k obj = new reverse_arrayby_k();
-
-        System.out.println("Enter rotation value:");
+        System.out.print("Enter value of k: ");
         int k = sc.nextInt();
 
-        System.out.println("ENter number: ");
+        System.out.println("Enter num: ");
         int n = sc.nextInt();
 
-        System.out.println("Enter array element:");
+        System.out.println("Enter element of arrays: ");
         int[] arr = new int[n];
-
         for(int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
         }
 
-        obj.reverseArr(arr, k);
+        reverse_arrayby_k rabk = new reverse_arrayby_k();
+
+        rabk.reverseArr(arr, k);
 
         for(int i = 0; i < n; i++){
             System.out.print(arr[i] + " ");
