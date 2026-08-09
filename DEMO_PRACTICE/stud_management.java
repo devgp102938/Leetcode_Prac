@@ -12,7 +12,7 @@ class Student{
 
     public void displayDetails(){
         System.out.println("Name : " + name);
-        System.out.println("rollno : " + rollno);
+        System.out.println("Rollno : " + rollno);
         System.out.println("marks : " + marks);
     }
 
