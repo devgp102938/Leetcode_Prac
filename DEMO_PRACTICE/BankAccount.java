@@ -10,7 +10,6 @@ class Bank{
     }
 
     void deposit(double amount){
-        
         if(amount <= 0){
             System.out.println("Enter valid amount for making deposit");
             return;
