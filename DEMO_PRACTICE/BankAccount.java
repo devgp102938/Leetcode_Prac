@@ -1,68 +1,63 @@
+
 class Bank{
-    private String accountHolder;
-    private long accountNumber;
-    private double balance;
 
-    Bank(String accountHolder, long accountNumber, double balance) {
-        this.accountHolder = accountHolder;
-        this.accountNumber = accountNumber;
-        this.balance = balance;
+    private final String HolderName;
+    private final long AccountNumber;
+    private double Balance;
+
+    Bank(String HolderName, long AccountNumber, double Balance) {
+        this.HolderName = HolderName;
+        this.AccountNumber = AccountNumber;
+        this.Balance = Balance;
     }
 
-    void deposit(double amount){
-
-        if(amount <= 0){
-            System.out.println("Enter valid amount for making deposit");
-            return;
+    //deposit
+    void deposit(double Amount){
+        if(Amount < 0){
+            System.out.println("Amount should be more than 0");
         }
 
-        balance += amount;
-        System.out.println("New Balance after deposit: " + balance);
+        Balance += Amount;
+        System.out.println("New Balance After Deposit" + Balance);
     }
 
-    void withdraw(double amount){
-
-        if(amount <= 0){
-            System.out.println("Enter Valid Amount to make Withdraw request");
-            return;
+    //withdraw
+    void withdraw(double Amount){
+        if(Amount < 0){
+            System.out.println("Amount should be more than 0");
         }
 
-        if(amount > balance){
+        if(Amount > Balance){
             System.out.println("Insufficient balance");
-            return;
         }
+    }
 
-        balance -= amount;
-        System.out.println("New Balance after withdraw: " + balance);
-    } 
-
+    //display
     void display(){
-        System.out.println("Account Holder : " + accountHolder);
-        System.out.println("Account Number : " + accountNumber);
-        System.out.println("Current Balance : " + balance);
+        System.out.println("Holder Name: " + HolderName);
+        System.out.println("Account No. : " + AccountNumber);
+        System.out.println("Balance : " + Balance);
     }
 }
 
 public class BankAccount{
     public static void main(String[] args) {
-        Bank obj = new Bank("Dev", 78101, 20000);
-        Bank obj1 = new Bank("diya", 78102, 30000);
-
-        obj.display();
-
-        obj.deposit(2000);
-        obj.display();
-
-        obj.withdraw(1000);
-        obj.display();
+        Bank Account1 = new Bank("dev", 78101, 250000);
+        Bank Account2 = new Bank("ved", 78102, 350000);
 
 
-        obj1.display();
+        Account1.display();
+        
+        Account1.deposit(3000);
+        Account1.display();
 
-        obj.deposit(300);
-        obj.display();
+        Account1.withdraw(1500);
+        Account1.display();
 
-        obj.withdraw(10000);
-        obj.display();
+        Account2.display();
+        Account2.deposit(4000);
+
+        Account2.withdraw(2000);
+        Account2.display();
     }
 }
