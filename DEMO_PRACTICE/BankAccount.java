@@ -15,6 +15,7 @@ class Bank{
     void deposit(double Amount){
         if(Amount < 0){
             System.out.println("Amount should be more than 0");
+            return;
         }
 
         Balance += Amount;
@@ -25,11 +26,16 @@ class Bank{
     void withdraw(double Amount){
         if(Amount < 0){
             System.out.println("Amount should be more than 0");
+            return;
         }
 
         if(Amount > Balance){
             System.out.println("Insufficient balance");
+            return;
         }
+
+        Balance -= Amount;
+        System.out.println("Balance after Withdraw" + Balance);
     }
 
     //display
