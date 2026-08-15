@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 class Union_array{
     public List<Integer> findUnion(int[] arr1, int[] arr2, int n, int m){
         Set<Integer> st = new TreeSet<>();
