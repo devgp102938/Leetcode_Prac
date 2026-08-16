@@ -1,5 +1,3 @@
-package two_sum;
-
 import java.util.*;
 
 class two_Sum{
