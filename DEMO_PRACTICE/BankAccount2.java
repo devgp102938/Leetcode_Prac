@@ -1,12 +1,12 @@
 class BankAccount{
     
     private final String accountHolder;
-    private final long AccountNumber;
+    private final long accountNumber;
     private double balance;
 
-    BankAccount(String accountHolder, long AccountNumber, double balance) {
+    BankAccount(String accountHolder, long accountNumber, double balance) {
         this.accountHolder = accountHolder;
-        this.AccountNumber = AccountNumber;
+        this.accountNumber = accountNumber;
         this.balance = balance;
     }
 
@@ -18,13 +18,13 @@ class BankAccount{
         return accountHolder;
     }
 
-    public long getAccountNumber(){
-        return AccountNumber;
+    public long getaccountNumber(){
+        return accountNumber;
     }
 
     //deposit
     public void deposit(double Amount){
-        if(Amount < 0){
+        if(Amount <= 0){
             System.out.println("Amount Should be greater than 0");
             return;
         }
@@ -35,7 +35,7 @@ class BankAccount{
 
     //withdraw
     public void withdraw(double Amount){
-        if(Amount < 0){
+        if(Amount <= 0){
             System.out.println("Amount Should be greater than 0");
             return;
         }
@@ -59,6 +59,6 @@ public class BankAccount2{
 
         System.out.println(Account1.getbalance());
         System.out.println(Account1.getaccountHolder());
-        System.out.println(Account1.getAccountNumber());
+        System.out.println(Account1.getaccountNumber());
     }
 }
