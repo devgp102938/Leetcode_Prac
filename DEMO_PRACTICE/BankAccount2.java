@@ -60,6 +60,5 @@ public class BankAccount2{
         System.out.println(Account1.getbalance());
         System.out.println(Account1.getaccountHolder());
         System.out.println(Account1.getaccountNumber());
-        System.out.println(Account1.getaccountNumber());
     }
 }
