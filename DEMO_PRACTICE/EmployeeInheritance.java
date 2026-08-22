@@ -49,6 +49,6 @@ class EmployeeInheritance{
 
         Developer dev = new Developer(name, Salary, programmingLanguage);
 
-        dev.displayInfo();
+        dev.displayInfo()
     }
 }
